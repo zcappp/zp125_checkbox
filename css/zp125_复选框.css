@@ -1,0 +1,127 @@
+module.exports=`
+
+/**/
+
+.zp125item {
+    box-sizing: border-box;
+    position: relative;
+    white-space: nowrap;
+    cursor: pointer;
+    margin: .5em 0;
+}
+
+.zp125box {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    top: -0.09em;
+}
+
+.zp125box i {
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background-color: #fff;
+    border: 1px solid #d9d9d9;
+    border-radius: 2px;
+    border-collapse: separate;
+    transition: all .3s;
+}
+
+.zp125 label {
+    cursor: pointer;
+}
+
+.zp125box.checked i {
+    background-color: #1890ff;
+}
+
+.zp125box.checked i,
+.zp125box i:hover {
+    border-color: #1890ff;
+}
+
+.zp125box i::after {
+    position: absolute;
+    top: 50%;
+    left: 22%;
+    display: table;
+    width: 5.71428571px;
+    height: 9.14285714px;
+    border: 2px solid #fff;
+    border-top: 0;
+    border-left: 0;
+    transform: rotate(45deg) scale(0) translate(-50%, -50%);
+    opacity: 0;
+    content: ' ';
+}
+
+.zp125box.checked::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #1890ff;
+    border-radius: 2px;
+    visibility: hidden;
+    animation: zp125box .36s ease-in-out;
+    animation-fill-mode: backwards;
+    content: '';
+}
+
+.zp125box.checked i::after {
+    opacity: 1;
+    transform: rotate(45deg) scale(1) translate(-50%, -50%);
+    transition: all .2s cubic-bezier(.12, .4, .29, 1.46) .1s;
+}
+
+@keyframes zp125box {
+    0% {
+        transform: scale(1);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1.6);
+        opacity: 0;
+    }
+}
+
+.zp125.block .zp125item {
+    display: block;
+}
+
+.zp125.inline {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.zp125.inline .zp125item {
+    flex: 0 0 25%;
+}
+
+.zp125.block label,
+.zp125.inline label {
+    padding: 0 8px;
+}
+
+.zp125item.zcell {
+    white-space: normal;
+    margin: 0;
+}
+
+.zp125item.zcell .zp125box {
+    order: 2;
+    top: 0;
+    margin-right: .5em;
+}
+
+.zp125item.zcell label {
+    flex: 1;
+}
+
+`
