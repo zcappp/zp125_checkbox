@@ -14,7 +14,7 @@ function render(ref) {
     </span>)
 }
 
-function onInit(ref) {
+function init(ref) {
     const { exc, props, render } = ref
     if (props.style) {
         ref.container.classList.add(props.style)
@@ -67,6 +67,6 @@ $plugin({
         label: "onChange表达式"
     }],
     render,
-    onInit,
+    init,
     css
 })
