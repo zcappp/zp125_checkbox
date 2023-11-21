@@ -15,13 +15,13 @@ function render(ref) {
 }
 
 function init(ref) {
-    const { exc, props, render } = ref
+    const { excA, props, render } = ref
     if (props.style) {
         ref.container.classList.add(props.style)
         if (props.style === "zcells") setTimeout(() => Array.from(ref.container.children).forEach(a => a.classList.add("zcell")), 9)
     }
-    const O = ref.options = exc('clone(o)', { o: props.options || ref.children })
-    const L = ref.labels = exc('clone(o)', { o: props.labels || O })
+    const O = ref.options = excA('clone(o)', { o: props.options || ref.children })
+    const L = ref.labels = excA('clone(o)', { o: props.labels || O })
     if (!Array.isArray(O) || !Array.isArray(L)) {
         ref.options = []
         ref.labels = []
