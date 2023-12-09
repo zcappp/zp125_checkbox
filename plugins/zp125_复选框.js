@@ -36,7 +36,7 @@ function click(ref, v) {
     if (!Array.isArray(values)) values = []
     values.indexOf(v) > -1 ? values.splice(values.indexOf(v), 1) : values.push(v)
     ref.setForm(props.dbf, values)
-    if (props.change) ref.exc(props.change, { ...ref.ctx, $x: v }, () => ref.exc("render()"))
+    if (props.change) ref.exc(props.change, { ...ref.ctx, $val: v }, () => ref.exc("render()"))
 }
 
 
