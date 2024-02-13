@@ -1,5 +1,5 @@
 import React from "react"
-import css from "../css/zp125_复选框.css"
+import css from "./zp125_复选框.css"
 
 function render(ref) {
     if (!ref.props.dbf) return <div>请配置表单字段</div>
