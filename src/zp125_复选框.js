@@ -2,6 +2,7 @@ import React from "react"
 import css from "./zp125_复选框.css"
 
 function render(ref) {
+    if (!ref.getForm) return <div>请置于表单容器中</div>
     if (!ref.props.dbf) return <div>请配置表单字段</div>
     let values = ref.getForm(ref.props.dbf)
     if (!Array.isArray(values)) {
@@ -64,7 +65,8 @@ $plugin({
     }, {
         prop: "change",
         type: "exp",
-        label: "onChange表达式"
+        label: "onChange表达式",
+        ph: "$val"
     }],
     render,
     init,
